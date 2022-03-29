@@ -13,7 +13,7 @@ properties([parameters([string(description: 'enter the path of the file', name: 
                     stage('executing the powershell script') {
                             steps {
                                   echo "executed the script"
-                                  powershell 'Scripts/URL_update.ps1'								  
+                                  PowerShell (". '\\URLupdate.ps1'")								  
 							}
 					}
 			}
