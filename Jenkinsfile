@@ -1,4 +1,4 @@
-properties([parameters([string(defaultValue: 'G:\\sample\\project_link.txt', name: 'Filepath'), string(defaultValue: 'http://supreeth.access.com/certified', name: 'OldURL'), string(defaultValue: 'https://subba.access.in/cerified', name: 'NewURL')])])
+properties([parameters([string(description: 'enter the path of the file', name: 'Filepath'), string(description: 'enter the replacing URL', name: 'OldURL'), string(description: 'enter the new URL', name: 'NewURL')])])
   
     pipeline {
             agent any 
