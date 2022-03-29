@@ -1,4 +1,4 @@
-properties([parameters([string(description: 'Please enter the path of the file', name: 'Filepath'), string(description: 'Please enter the replacing URL', name: 'OldURL'), string(description: 'Please enter the NewURL', name: 'NewURL')])])
+properties([parameters([string(defaultValue: 'G:\\sample\\project_link.txt', name: 'Filepath'), string(defaultValue: 'http://supreeth.access.com/certified', name: 'OldURL'), string(defaultValue: 'https://subba.access.in/cerified', name: 'NewURL')])])
   
     pipeline {
             agent any 
@@ -6,14 +6,14 @@ properties([parameters([string(description: 'Please enter the path of the file',
 		            stage('Git checkout') {
 				            steps {
 						          echo "checking out from Git Repo";
-								  git branch: 'main', credentialsId: '7e1336ff-5e5f-4295-9113-8396afa69096', url: 'https://github.com/Supreeth-Athreyas/projects.git'
+								 git branch: 'main', url: 'https://github.com/Supreeth-Athreyas/project.git'
 							}
 					}
 					
                     stage('executing the powershell script') {
                             steps {
                                   echo "executed the script"
-                                  powershell 'update_URL.ps1'								  
+                                  powershell 'Scripts/URL_update.ps1'								  
 							}
 					}
 			}
